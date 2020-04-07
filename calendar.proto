@@ -8,46 +8,16 @@ message Calendar {
 }
 
 message Year {
-    uint32 Number = 1;
+    int32 Number = 1;
     repeated Month Months = 2;
 }
 
 message Month {
-    MonthName Name = 1;
-    repeated Week weeks = 2;
+    string Name = 1;
+    repeated Day days = 2;
 }
 
-
-message Week {
-    uint32 FirstDay = 1;
-    repeated Day Days = 2;
-}
 message Day {
     int32 Number = 1;
-    DayName Name = 2;
-}
-
-enum MonthName {
-    January = 0;
-    February = 1;
-    March = 2;
-    April = 3;
-    May = 4;
-    June = 5;
-    July = 6;
-    August = 7;
-    September = 8;
-    October = 9;
-    November = 10;
-    December = 11;
-}
-
-enum DayName {
-    Monday = 0;
-    Tuesday = 1;
-    Wednesday = 2;
-    Thursday = 3;
-    Friday = 4;
-    Saturday = 5;
-    Sunday = 6;
+    string Name = 2;
 }
